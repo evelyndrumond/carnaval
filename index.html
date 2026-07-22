@@ -10,27 +10,29 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-background:radial-gradient(ellipse at 10% 10%,rgba(139,92,246,.4) 0%,transparent 50%),
-radial-gradient(ellipse at 90% 85%,rgba(13,148,136,.3) 0%,transparent 50%);}
+background:radial-gradient(ellipse at 8% 10%,rgba(139,92,246,.35) 0%,transparent 55%),
+radial-gradient(ellipse at 92% 85%,rgba(13,148,136,.25) 0%,transparent 55%),
+radial-gradient(ellipse at 50% 50%,rgba(244,114,182,.08) 0%,transparent 70%);}
 
+/* CONFETTI */
 .cf{position:fixed;top:-20px;opacity:0;border-radius:2px;animation:cffall linear forwards;z-index:999;pointer-events:none;}
 @keyframes cffall{0%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(106vh) rotate(680deg)}}
 
 /* HEADER */
-header{position:relative;z-index:1;text-align:center;padding:48px 20px 28px;}
+header{position:relative;z-index:1;text-align:center;padding:48px 20px 20px;}
 .flag{display:flex;justify-content:center;gap:5px;margin-bottom:16px;}
 .flag span{width:28px;height:10px;border-radius:3px;}
-h1{font-family:'Baloo 2',cursive;font-size:clamp(28px,6vw,52px);font-weight:800;
+h1{font-family:'Baloo 2',cursive;font-size:clamp(26px,5.5vw,50px);font-weight:800;
 background:linear-gradient(135deg,#FCD34D,#F472B6,#A78BFA,#34D399);
 -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 line-height:1.1;margin-bottom:10px;}
 .htag{display:inline-block;background:rgba(252,211,77,.12);border:1px solid rgba(252,211,77,.28);
 color:var(--gold);font-size:12px;font-weight:600;padding:4px 16px;border-radius:99px;
 margin-bottom:14px;letter-spacing:.5px;}
-header p{font-size:15px;color:var(--muted);max-width:440px;margin:0 auto;line-height:1.65;}
+header p{font-size:15px;color:var(--muted);max-width:480px;margin:0 auto 6px;line-height:1.65;}
 
 /* NAME */
-.name-section{position:relative;z-index:1;max-width:420px;margin:28px auto;padding:0 20px;}
+.name-section{position:relative;z-index:1;max-width:420px;margin:24px auto;padding:0 20px;}
 .name-label{font-size:13px;color:var(--muted);font-weight:500;margin-bottom:8px;text-align:center;}
 .name-input{width:100%;padding:13px 18px;border-radius:12px;border:1.5px solid var(--border);
 background:var(--card);color:var(--text);font-size:15px;font-family:'Inter',sans-serif;
@@ -38,97 +40,97 @@ outline:none;transition:border-color .2s;text-align:center;}
 .name-input:focus{border-color:var(--gold);}
 .name-input::placeholder{color:var(--muted);opacity:.5;}
 
-/* FIXED STRIP */
-.fixed-strip{position:relative;z-index:1;max-width:700px;margin:0 auto 40px;padding:0 20px;}
-.strip-box{display:flex;align-items:center;justify-content:center;gap:0;
-background:rgba(252,211,77,.07);border:1px solid rgba(252,211,77,.22);border-radius:99px;
-padding:10px 24px;flex-wrap:wrap;gap:6px;}
-.strip-item{text-align:center;padding:0 16px;}
-.strip-day{font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;}
-.strip-name{font-family:'Baloo 2',cursive;font-size:14px;font-weight:700;color:var(--text);}
-.strip-artist{font-size:10px;color:var(--muted);}
-.strip-arrow{font-size:18px;color:rgba(252,211,77,.4);}
-
-/* TWO CARDS LAYOUT */
-.cards-wrap{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:0 20px 60px;
-display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-@media(max-width:580px){.cards-wrap{grid-template-columns:1fr;gap:20px;}}
+/* CARDS GRID */
+.cards-wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 20px 50px;
+display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:560px){.cards-wrap{grid-template-columns:1fr;gap:16px;}}
+.card-ter{grid-column:1/-1;max-width:420px;justify-self:center;width:100%;}
+@media(max-width:560px){.card-ter{max-width:100%;}}
 
 /* VOTE CARD */
 .vote-card{background:var(--card);border:1.5px solid var(--border);border-radius:22px;
-padding:24px 20px 20px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;}
+padding:22px 18px 18px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;}
 .vc-accent{position:absolute;top:0;left:0;right:0;height:4px;border-radius:22px 22px 0 0;}
+.sex-accent{background:linear-gradient(90deg,#A78BFA,#818CF8);}
+.sab-accent{background:linear-gradient(90deg,#FCD34D,#F59E0B);}
 .dom-accent{background:linear-gradient(90deg,#F472B6,#C084FC);}
 .seg-accent{background:linear-gradient(90deg,#34D399,#60A5FA);}
+.ter-accent{background:linear-gradient(90deg,#FB923C,#F87171);}
+
 .vc-header{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.vc-day{font-family:'Baloo 2',cursive;font-size:22px;font-weight:800;color:var(--text);}
+.vc-day{font-family:'Baloo 2',cursive;font-size:20px;font-weight:800;color:var(--text);}
 .vc-date{font-size:11px;color:var(--muted);background:rgba(255,255,255,.07);
-padding:3px 10px;border-radius:99px;}
+padding:3px 10px;border-radius:99px;white-space:nowrap;}
 .vc-sub{font-size:12px;color:var(--muted);}
 
-/* OPTIONS LIST */
-.opt-list{display:flex;flex-direction:column;gap:8px;}
-.opt-item{border:1.5px solid var(--border);border-radius:12px;overflow:hidden;
-transition:border-color .2s,transform .15s;}
+/* OPTIONS */
+.opt-list{display:flex;flex-direction:column;gap:7px;}
+.opt-item{border:1.5px solid var(--border);border-radius:11px;overflow:hidden;
+transition:border-color .2s,transform .13s;}
 .opt-item:hover{transform:translateX(3px);}
 .opt-item.selected{border-color:var(--gold);}
 .opt-item.winner-opt{border-color:#34D399 !important;}
+.opt-item.special-item{background:rgba(252,211,77,.05);}
 
-.opt-btn{width:100%;padding:10px 14px;background:rgba(255,255,255,.03);border:none;
-cursor:pointer;display:flex;align-items:center;gap:10px;text-align:left;
+.opt-btn{width:100%;padding:9px 12px;background:rgba(255,255,255,.03);border:none;
+cursor:pointer;display:flex;align-items:center;gap:9px;text-align:left;
 font-family:'Inter',sans-serif;color:var(--text);transition:background .18s;}
 .opt-btn:hover{background:rgba(255,255,255,.07);}
-.opt-color{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.opt-color{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .opt-info{flex:1;min-width:0;}
-.opt-name{font-size:13px;font-weight:600;color:var(--text);}
-.opt-artist{font-size:11px;color:var(--muted);}
-.opt-count{font-family:'Baloo 2',cursive;font-size:16px;font-weight:800;color:var(--text);margin-left:auto;}
+.opt-name{font-size:12.5px;font-weight:600;color:var(--text);}
+.opt-artist{font-size:10.5px;color:var(--muted);}
+.special-badge{font-size:9px;font-weight:700;color:var(--gold);
+background:rgba(252,211,77,.15);border-radius:3px;padding:1px 5px;margin-left:4px;
+vertical-align:middle;text-transform:uppercase;}
+.opt-count{font-family:'Baloo 2',cursive;font-size:15px;font-weight:800;color:var(--text);margin-left:auto;flex-shrink:0;}
 
-.opt-barwrap{height:4px;background:rgba(255,255,255,.06);}
+.opt-barwrap{height:3px;background:rgba(255,255,255,.06);}
 .opt-bar{height:100%;transition:width .5s ease;width:0%;}
+.opt-voters{font-size:10px;color:var(--muted);font-style:italic;padding:3px 12px 5px;
+background:rgba(255,255,255,.02);min-height:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
-/* VOTERS BELOW EACH OPTION */
-.opt-voters{font-size:10px;color:var(--muted);font-style:italic;padding:4px 14px 6px;
-background:rgba(255,255,255,.02);min-height:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-
-/* LEADERBOARD / RESULT */
-.result-section{position:relative;z-index:1;max-width:700px;margin:0 auto 60px;padding:0 20px;}
-.result-box{background:var(--card);border:1.5px solid var(--border);border-radius:20px;padding:22px 24px;}
+/* RESULTS */
+.result-section{position:relative;z-index:1;max-width:860px;margin:0 auto 20px;padding:0 20px;}
+.result-box{background:var(--card);border:1.5px solid var(--border);border-radius:20px;padding:20px 22px;}
 .result-title{font-family:'Baloo 2',cursive;font-size:20px;font-weight:800;color:var(--gold);
 text-align:center;margin-bottom:16px;}
-.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-@media(max-width:480px){.result-grid{grid-template-columns:1fr;}}
-.result-day-title{font-family:'Baloo 2',cursive;font-size:15px;font-weight:700;color:var(--muted);
-margin-bottom:10px;display:flex;align-items:center;gap:6px;}
-.result-row{display:flex;align-items:center;gap:8px;padding:6px 0;
-border-bottom:1px solid rgba(255,255,255,.05);}
+.result-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+@media(max-width:700px){.result-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:400px){.result-grid{grid-template-columns:1fr;}}
+.result-day-title{font-family:'Baloo 2',cursive;font-size:13px;font-weight:700;color:var(--muted);
+margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.result-row{display:flex;align-items:center;gap:6px;padding:5px 0;
+border-bottom:1px solid rgba(255,255,255,.05);font-size:12px;}
 .result-row:last-child{border-bottom:none;}
-.result-rank{font-size:14px;min-width:20px;}
-.result-name{font-size:12px;color:var(--text);font-weight:500;flex:1;}
-.result-artist{font-size:10px;color:var(--muted);}
-.result-n{font-family:'Baloo 2',cursive;font-size:18px;font-weight:800;color:var(--gold);}
-.result-empty{font-size:12px;color:var(--muted);font-style:italic;text-align:center;padding:8px;}
+.result-rank{font-size:12px;min-width:18px;}
+.result-name{color:var(--text);font-weight:500;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.result-n{font-family:'Baloo 2',cursive;font-size:16px;font-weight:800;color:var(--gold);}
+.result-empty{font-size:11px;color:var(--muted);font-style:italic;text-align:center;padding:6px;}
 
 /* WHO VOTED */
-.who-section{position:relative;z-index:1;max-width:700px;margin:-20px auto 60px;padding:0 20px;}
-.who-box{background:var(--card);border:1.5px solid var(--border);border-radius:20px;padding:20px 24px;}
-.who-title{font-family:'Baloo 2',cursive;font-size:17px;font-weight:700;color:var(--text);margin-bottom:12px;}
-.who-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px;}
+.who-section{position:relative;z-index:1;max-width:860px;margin:0 auto 20px;padding:0 20px;}
+.who-box{background:var(--card);border:1.5px solid var(--border);border-radius:20px;padding:18px 22px;}
+.who-title{font-family:'Baloo 2',cursive;font-size:17px;font-weight:700;color:var(--text);margin-bottom:10px;}
+.who-row{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:12px;flex-wrap:wrap;}
 .who-row:last-child{border-bottom:none;}
-.who-name{font-weight:600;flex:1;}
-.who-dom,.who-seg{font-size:11px;padding:2px 9px;border-radius:6px;}
-.who-dom{background:rgba(244,114,182,.15);color:#F9A8D4;}
-.who-seg{background:rgba(52,211,153,.15);color:#6EE7B7;}
+.who-name{font-weight:600;min-width:80px;}
+.who-tag{font-size:10px;padding:2px 8px;border-radius:5px;white-space:nowrap;}
+.tag-sex{background:rgba(167,139,250,.15);color:#C4B5FD;}
+.tag-sab{background:rgba(252,211,77,.12);color:#FDE68A;}
+.tag-dom{background:rgba(244,114,182,.15);color:#F9A8D4;}
+.tag-seg{background:rgba(52,211,153,.15);color:#6EE7B7;}
+.tag-ter{background:rgba(251,146,60,.15);color:#FED7AA;}
 .who-empty{font-size:12px;color:var(--muted);font-style:italic;}
 
 /* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(70px);
 background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.4);color:#C4B5FD;
-padding:11px 24px;border-radius:99px;font-size:14px;font-weight:600;z-index:200;
+padding:11px 24px;border-radius:99px;font-size:13px;font-weight:600;z-index:200;
 transition:transform .35s ease;pointer-events:none;backdrop-filter:blur(8px);}
 .toast.show{transform:translateX(-50%) translateY(0);}
 
-.reset-wrap{position:relative;z-index:1;text-align:center;padding-bottom:48px;}
+.reset-wrap{position:relative;z-index:1;text-align:center;padding-bottom:50px;}
 .btn-reset{background:none;border:1px solid rgba(255,255,255,.12);color:var(--muted);
 padding:7px 20px;border-radius:99px;font-size:12px;cursor:pointer;
 font-family:'Inter',sans-serif;transition:all .2s;}
@@ -144,9 +146,9 @@ font-family:'Inter',sans-serif;transition:all .2s;}
 <span style="background:#002776"></span><span style="background:#FEDF00"></span>
 <span style="background:#009c3b"></span>
 </div>
-<div class="htag">Carnaval de Salvador 2027 · Circuito Barra-Ondina</div>
+<div class="htag">Carnaval de Salvador 2027 · Circuito Barra-Ondina · 5 a 9/fev</div>
 <h1>Votação da galera 🎊</h1>
-<p>Dois dias pra decidir. Cada um vota no bloco favorito de cada dia!</p>
+<p>Vote no bloco favorito de cada dia. Cinco dias de folia pra planejar!</p>
 </header>
 
 <div class="name-section">
@@ -154,70 +156,15 @@ font-family:'Inter',sans-serif;transition:all .2s;}
 <input class="name-input" id="voter-name" type="text" placeholder="Ex: Mariana, João…" autocomplete="off" maxlength="30">
 </div>
 
-<div class="fixed-strip">
-<div class="strip-box">
-<div class="strip-item">
-<div class="strip-day">Sáb 6/2 · fixo</div>
-<div class="strip-name">🦅 Coruja</div>
-<div class="strip-artist">Ivete Sangalo</div>
-</div>
-<div class="strip-arrow">→</div>
-<div class="strip-item">
-<div class="strip-day">Dom 7/2 · votação</div>
-<div class="strip-name" style="color:var(--muted)">? a decidir</div>
-<div class="strip-artist">vote abaixo</div>
-</div>
-<div class="strip-arrow">→</div>
-<div class="strip-item">
-<div class="strip-day">Seg 8/2 · votação</div>
-<div class="strip-name" style="color:var(--muted)">? a decidir</div>
-<div class="strip-artist">vote abaixo</div>
-</div>
-<div class="strip-arrow">→</div>
-<div class="strip-item">
-<div class="strip-day">Ter 9/2 · fixo</div>
-<div class="strip-name">🏟️ Camarote</div>
-<div class="strip-artist">Ivete Sangalo</div>
-</div>
-</div>
-</div>
-
-<div class="cards-wrap">
-<!-- DOMINGO -->
-<div class="vote-card" id="card-dom">
-<div class="vc-accent dom-accent"></div>
-<div class="vc-header">
-<div class="vc-day">☀️ Domingo</div>
-<span class="vc-date">7 de fevereiro</span>
-</div>
-<div class="vc-sub">Qual bloco você prefere?</div>
-<div class="opt-list" id="dom-opts"></div>
-</div>
-
-<!-- SEGUNDA -->
-<div class="vote-card" id="card-seg">
-<div class="vc-accent seg-accent"></div>
-<div class="vc-header">
-<div class="vc-day">🌙 Segunda</div>
-<span class="vc-date">8 de fevereiro</span>
-</div>
-<div class="vc-sub">Qual bloco você prefere?</div>
-<div class="opt-list" id="seg-opts"></div>
-</div>
+<div class="cards-wrap" id="cards-wrap">
+<!-- Rendered by JS -->
 </div>
 
 <div class="result-section">
 <div class="result-box">
-<div class="result-title">🏆 Ranking</div>
-<div class="result-grid">
-<div>
-<div class="result-day-title"><span style="color:#F472B6">●</span> Domingo</div>
-<div id="result-dom"><div class="result-empty">Aguardando votos…</div></div>
-</div>
-<div>
-<div class="result-day-title"><span style="color:#34D399">●</span> Segunda</div>
-<div id="result-seg"><div class="result-empty">Aguardando votos…</div></div>
-</div>
+<div class="result-title">🏆 Ranking por dia</div>
+<div class="result-grid" id="result-grid">
+<!-- Rendered by JS -->
 </div>
 </div>
 </div>
@@ -234,161 +181,247 @@ font-family:'Inter',sans-serif;transition:all .2s;}
 </div>
 
 <script>
-const DOM_OPTS=[
-{id:'d0',name:'Camaleão', artist:'Bell Marques', color:'#34D399'},
-{id:'d1',name:'Me Abraça', artist:'Durval Lelys', color:'#60A5FA'},
-{id:'d2',name:'Crocodilo', artist:'Daniela Mercury',color:'#F472B6'},
-{id:'d3',name:'Bloco da Torcida',artist:'Xanddy Harmonia',color:'#FB923C'},
+// ── CONFIG ─────────────────────────────────────────────────────────────────
+const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwv-ZqbqIcHIp0rsiVYTaLNq5HzPfxEWSo_hDHKpuyu-k0eee_utoRgNzC2MUyKJkJC/exec';
+
+// ── DATA ─────────────────────────────────────────────────────────────────
+const DAYS = [
+  {
+    id:'sex', day:'Sexta', date:'5 de fevereiro', emoji:'🎵',
+    accent:'sex-accent', tagClass:'tag-sex',
+    opts:[
+      {id:'x0', name:'Vumbora',       artist:'Bell Marques', color:'#A78BFA'},
+      {id:'x1', name:'Bloco do Nana', artist:'Léo Santana',  color:'#34D399'},
+      {id:'x2', name:'Timbalada',     artist:'Timbalada',    color:'#60A5FA'},
+      {id:'x3', name:'Fissura',       artist:'Tomate',       color:'#FB923C'},
+    ]
+  },
+  {
+    id:'sab', day:'Sábado', date:'6 de fevereiro', emoji:'🎸',
+    accent:'sab-accent', tagClass:'tag-sab',
+    opts:[
+      {id:'s0', name:'Coruja',        artist:'Ivete Sangalo', color:'#C084FC'},
+      {id:'s1', name:'Vumbora',       artist:'Bell Marques',  color:'#A78BFA'},
+      {id:'s2', name:'Eva',           artist:'Banda Eva',     color:'#F472B6'},
+      {id:'s3', name:'Bloco do Nana', artist:'Léo Santana',   color:'#34D399'},
+      {id:'s4', name:'Timbalada',     artist:'Timbalada',     color:'#60A5FA'},
+      {id:'s5', name:'Fissura',       artist:'Tomate',        color:'#FB923C'},
+    ]
+  },
+  {
+    id:'dom', day:'Domingo', date:'7 de fevereiro', emoji:'☀️',
+    accent:'dom-accent', tagClass:'tag-dom',
+    opts:[
+      {id:'d0', name:'Camarote Salvador', artist:'Bell Marques',    color:'#FCD34D', special:true},
+      {id:'d1', name:'Camaleão',          artist:'Bell Marques',    color:'#A78BFA'},
+      {id:'d2', name:'Me Abraça',         artist:'Durval Lelys',    color:'#60A5FA'},
+      {id:'d3', name:'Crocodilo',         artist:'Daniela Mercury', color:'#F472B6'},
+      {id:'d4', name:'Bloco da Torcida',  artist:'Xanddy Harmonia', color:'#FB923C'},
+    ]
+  },
+  {
+    id:'seg', day:'Segunda', date:'8 de fevereiro', emoji:'🌙',
+    accent:'seg-accent', tagClass:'tag-seg',
+    opts:[
+      {id:'g0', name:'Coruja',           artist:'Ivete Sangalo',  color:'#C084FC'},
+      {id:'g1', name:'Camaleão',         artist:'Bell Marques',   color:'#A78BFA'},
+      {id:'g2', name:'Me Abraça',        artist:'Durval Lelys',   color:'#60A5FA'},
+      {id:'g3', name:'Vem Comigo',       artist:'Carla Cristina', color:'#34D399'},
+      {id:'g4', name:'Bloco da Segunda', artist:'Xanddy Harmonia',color:'#FB923C'},
+    ]
+  },
+  {
+    id:'ter', day:'Terça', date:'9 de fevereiro', emoji:'🏆', cardClass:'card-ter',
+    accent:'ter-accent', tagClass:'tag-ter',
+    opts:[
+      {id:'t0', name:'Camarote Salvador', artist:'Ivete Sangalo',  color:'#FCD34D', special:true},
+      {id:'t1', name:'Camaleão',          artist:'Bell Marques',   color:'#A78BFA'},
+      {id:'t2', name:'Largadinho',        artist:'Claudia Leitte', color:'#F472B6'},
+      {id:'t3', name:'Praieiro',          artist:'Jammil',         color:'#60A5FA'},
+    ]
+  },
 ];
-const SEG_OPTS=[
-{id:'s0',name:'Coruja', artist:'Ivete Sangalo', color:'#C084FC'},
-{id:'s1',name:'Camaleão', artist:'Bell Marques', color:'#34D399'},
-{id:'s2',name:'Me Abraça', artist:'Durval Lelys', color:'#60A5FA'},
-{id:'s3',name:'Crocodilo', artist:'Daniela Mercury',color:'#F472B6'},
-{id:'s4',name:'Vem Comigo', artist:'Carla Cristina', color:'#FBBF24'},
-{id:'s5',name:'Bloco da Segunda',artist:'Xanddy Harmonia',color:'#FB923C'},
-];
-let votes={};
-const WEBAPP_URL='https://script.google.com/macros/s/AKfycbwv-ZqbqIcHIp0rsiVYTaLNq5HzPfxEWSo_hDHKpuyu-k0eee_utoRgNzC2MUyKJkJC/exec';
-function domIndexOf(id){return DOM_OPTS.findIndex(o=>o.id===id);}
-function segIndexOf(id){return SEG_OPTS.findIndex(o=>o.id===id);}
-function cidFromVote(v){
-if(!v||v.dom==null||v.seg==null)return null;
-const di=domIndexOf(v.dom),si=segIndexOf(v.seg);
-if(di<0||si<0)return null;
-return di*6+si;
+
+let votes = {};
+
+function encodeCid(v){
+  let cid = 0;
+  DAYS.forEach(d=>{
+    const size = d.opts.length + 1;
+    const idx  = (v && v[d.id]) ? d.opts.findIndex(o=>o.id===v[d.id]) + 1 : 0;
+    cid = cid * size + idx;
+  });
+  return cid;
 }
-function voteFromCid(cid){
-const di=Math.floor(cid/6),si=cid%6;
-return{dom:DOM_OPTS[di]?DOM_OPTS[di].id:null,seg:SEG_OPTS[si]?SEG_OPTS[si].id:null};
+function decodeCid(cid){
+  const v = {};
+  for(let i = DAYS.length - 1; i >= 0; i--){
+    const d = DAYS[i];
+    const size = d.opts.length + 1;
+    const idx = cid % size;
+    cid = Math.floor(cid / size);
+    if(idx > 0) v[d.id] = d.opts[idx-1].id;
+  }
+  return v;
 }
+
+function buildCards(){
+  const wrap = document.getElementById('cards-wrap');
+  const rg   = document.getElementById('result-grid');
+  wrap.innerHTML = '';
+  rg.innerHTML   = '';
+
+  DAYS.forEach(d => {
+    const card = document.createElement('div');
+    card.className = 'vote-card' + (d.cardClass ? ' ' + d.cardClass : '');
+    card.innerHTML = `
+      <div class="vc-accent ${d.accent}"></div>
+      <div class="vc-header">
+        <div class="vc-day">${d.emoji} ${esc(d.day)}</div>
+        <span class="vc-date">${esc(d.date)}</span>
+      </div>
+      <div class="vc-sub">Qual é a escolha da galera?</div>
+      <div class="opt-list" id="opts-${d.id}">
+${d.opts.map(o=>`
+          <div class="opt-item${o.special?' special-item':''}" id="item-${o.id}">
+            <button class="opt-btn" onclick="vote('${d.id}','${o.id}')">
+              <span class="opt-color" style="background:${o.color}"></span>
+              <span class="opt-info">
+                <div class="opt-name">${esc(o.name)}${o.special?'<span class="special-badge">camarote</span>':''}</div>
+                <div class="opt-artist">${esc(o.artist)}</div>
+              </span>
+              <span class="opt-count" id="count-${o.id}">0</span>
+            </button>
+            <div class="opt-barwrap"><div class="opt-bar" id="bar-${o.id}" style="background:${o.color}"></div></div>
+            <div class="opt-voters" id="voters-${o.id}">—</div>
+          </div>`).join('')}
+      </div>`;
+    wrap.appendChild(card);
+
+    const col = document.createElement('div');
+    col.innerHTML = `
+      <div class="result-day-title">${d.emoji} ${esc(d.day)}</div>
+      <div id="result-${d.id}"><div class="result-empty">Aguardando…</div></div>`;
+    rg.appendChild(col);
+  });
+}
+
 function loadVotes(){
-fetch(WEBAPP_URL).then(r=>r.json()).then(data=>{
-const raw=data||{};
-const converted={};
-Object.entries(raw).forEach(([name,cid])=>{converted[name]=voteFromCid(cid);});
-votes=converted;
-updateUI();
-}).catch(()=>{});
+  fetch(WEBAPP_URL)
+    .then(r=>r.json())
+    .then(data=>{
+      Object.entries(data||{}).forEach(([name,cid])=>{
+        votes[name] = decodeCid(Number(cid));
+      });
+      updateUI();
+    })
+    .catch(()=>{});
 }
 function saveVote(name){
-const cid=cidFromVote(votes[name]);
-if(cid==null)return;
-fetch(WEBAPP_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name:name,cid:cid})}).catch(()=>{});
+  const cid = encodeCid(votes[name]);
+  fetch(WEBAPP_URL,{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'text/plain;charset=utf-8'},
+    body: JSON.stringify({name:name, cid:cid})
+  });
 }
-function renderOpts(){
-['dom','seg'].forEach(day=>{
-const opts=day==='dom'?DOM_OPTS:SEG_OPTS;
-document.getElementById(day+'-opts').innerHTML=opts.map(o=>`
-<div class="opt-item" id="item-${o.id}">
-<button class="opt-btn" onclick="vote('${day}','${o.id}')">
-<span class="opt-color" id="dot-${o.id}" style="background:${o.color}"></span>
-<span class="opt-info">
-<div class="opt-name">${esc(o.name)}</div>
-<div class="opt-artist">${esc(o.artist)}</div>
-</span>
-<span class="opt-count" id="count-${o.id}">0</span>
-</button>
-<div class="opt-barwrap"><div class="opt-bar" id="bar-${o.id}" style="background:${o.color}"></div></div>
-<div class="opt-voters" id="voters-${o.id}">—</div>
-</div>`).join('');
-});
+
+function vote(dayId, optId){
+  const nameEl = document.getElementById('voter-name');
+  const name   = nameEl.value.trim();
+  if(!name){
+    nameEl.focus(); nameEl.style.borderColor='#EF4444';
+    setTimeout(()=>nameEl.style.borderColor='',1400);
+    toast('⚠️ Coloca seu nome primeiro!'); return;
+  }
+  if(!votes[name]) votes[name]={};
+  votes[name][dayId] = optId;
+  saveVote(name);
+  confetti();
+  const day  = DAYS.find(d=>d.id===dayId);
+  const opt  = day.opts.find(o=>o.id===optId);
+  toast(`🎉 ${name} votou em ${opt.name} no ${day.day}!`);
+  updateUI();
 }
-function vote(day,optId){
-const nameEl=document.getElementById('voter-name');
-const name=nameEl.value.trim();
-if(!name){
-nameEl.focus();nameEl.style.borderColor='#EF4444';
-setTimeout(()=>nameEl.style.borderColor='',1300);
-toast('⚠️ Coloca seu nome primeiro!');return;
-}
-if(!votes[name])votes[name]={dom:null,seg:null};
-votes[name][day]=optId;
-confetti();
-toast(`🎉 Voto de ${name} registrado!`);
-saveVote(name);
-updateUI();
-}
+
 function updateUI(){
-const myName=document.getElementById('voter-name').value.trim();
-const myVote=votes[myName]||{dom:null,seg:null};
-['dom','seg'].forEach(day=>{
-const opts=day==='dom'?DOM_OPTS:SEG_OPTS;
-const totals={};opts.forEach(o=>totals[o.id]=0);
-Object.values(votes).forEach(v=>{if(v[day]&&totals[v[day]]!==undefined)totals[v[day]]++;});
-const total=Object.values(totals).reduce((a,b)=>a+b,0);
-const maxV=Math.max(0,...Object.values(totals));
-opts.forEach(o=>{
-const n=totals[o.id];
-const pct=total>0?(n/total*100).toFixed(1)+'%':'0%';
-const el=id=>document.getElementById(id);
-if(!el('count-'+o.id))return;
-el('count-'+o.id).textContent=n;
-el('bar-'+o.id).style.width=pct;
-const names=Object.entries(votes).filter(([,v])=>v[day]===o.id).map(([k])=>k);
-el('voters-'+o.id).textContent=names.length?names.join(', '):'—';
-const item=el('item-'+o.id);
-item.classList.toggle('selected',myVote[day]===o.id);
-item.classList.toggle('winner-opt',n===maxV&&n>0);
-});
-});
-updateRanking();
-updateWho();
+  const myName = document.getElementById('voter-name').value.trim();
+  const myVote = votes[myName] || {};
+
+  DAYS.forEach(d => {
+    const totals = {};
+    d.opts.forEach(o => totals[o.id] = 0);
+    Object.values(votes).forEach(v => { if(v[d.id] && totals[v[d.id]] !== undefined) totals[v[d.id]]++; });
+    const total = Object.values(totals).reduce((a,b)=>a+b,0);
+    const maxV  = Math.max(0, ...Object.values(totals));
+
+    d.opts.forEach(o => {
+      const n   = totals[o.id];
+      const pct = total > 0 ? (n/total*100).toFixed(1)+'%' : '0%';
+      gid('count-'+o.id).textContent = n;
+      gid('bar-'+o.id).style.width   = pct;
+      const names = Object.entries(votes).filter(([,v])=>v[d.id]===o.id).map(([k])=>k);
+      gid('voters-'+o.id).textContent = names.length ? names.join(', ') : '—';
+      const item = gid('item-'+o.id);
+      item.classList.toggle('selected',   myVote[d.id] === o.id);
+      item.classList.toggle('winner-opt', n === maxV && n > 0);
+    });
+
+    const ranked = d.opts.map(o=>({...o,n:totals[o.id]})).filter(o=>o.n>0).sort((a,b)=>b.n-a.n);
+    const el = gid('result-'+d.id);
+    const M  = ['🥇','🥈','🥉'];
+    el.innerHTML = ranked.length
+      ? ranked.map((o,i)=>`<div class="result-row">
+          <span class="result-rank">${i<3?M[i]:(i+1)+'º'}</span>
+          <span class="result-name" style="color:${o.color}">${esc(o.name)}</span>
+          <span class="result-n">${o.n}</span></div>`).join('')
+      : '<div class="result-empty">Aguardando…</div>';
+  });
+
+  updateWho();
 }
-function updateRanking(){
-['dom','seg'].forEach(day=>{
-const opts=day==='dom'?DOM_OPTS:SEG_OPTS;
-const totals={};opts.forEach(o=>totals[o.id]=0);
-Object.values(votes).forEach(v=>{if(v[day])totals[v[day]]++;});
-const ranked=opts.map(o=>({...o,n:totals[o.id]})).filter(o=>o.n>0).sort((a,b)=>b.n-a.n);
-const el=document.getElementById('result-'+day);
-const medals=['🥇','🥈','🥉'];
-if(!ranked.length){el.innerHTML='<div class="result-empty">Aguardando votos…</div>';return;}
-el.innerHTML=ranked.map((o,i)=>`
-<div class="result-row">
-<span class="result-rank">${i<3?medals[i]:(i+1)+'º'}</span>
-<span class="result-name" style="color:${o.color}">${esc(o.name)}</span>
-<span class="result-n">${o.n}</span>
-</div>`).join('');
-});
-}
+
 function updateWho(){
-const voters=Object.entries(votes);
-const el=document.getElementById('who-voted');
-if(!voters.length){el.innerHTML='<div class="who-empty">Nenhum voto ainda.</div>';return;}
-const getDomName=id=>{const o=DOM_OPTS.find(o=>o.id===id);return o?o.name:'—';};
-const getSegName=id=>{const o=SEG_OPTS.find(o=>o.id===id);return o?o.name:'—';};
-el.innerHTML=voters.map(([name,v])=>`
-<div class="who-row">
-<span class="who-name">${esc(name)}</span>
-<span class="who-dom">Dom: ${esc(v.dom?getDomName(v.dom):'—')}</span>
-<span class="who-seg">Seg: ${esc(v.seg?getSegName(v.seg):'—')}</span>
-</div>`).join('');
+  const voters = Object.entries(votes);
+  const el = gid('who-voted');
+  if(!voters.length){ el.innerHTML='<div class="who-empty">Nenhum voto ainda.</div>'; return; }
+
+  el.innerHTML = voters.map(([name,v])=>{
+    const tags = DAYS.map(d=>{
+      if(!v[d.id]) return '';
+      const opt = d.opts.find(o=>o.id===v[d.id]);
+      return `<span class="who-tag ${d.tagClass}">${d.emoji} ${esc(opt?opt.name:'')}</span>`;
+    }).join('');
+    return `<div class="who-row"><span class="who-name">${esc(name)}</span>${tags}</div>`;
+  }).join('');
 }
+
 function resetAll(){
-if(!Object.keys(votes).length)return;
-if(!confirm('Zerar todos os votos?'))return;
-votes={};updateUI();
+  if(!Object.keys(votes).length) return;
+  if(!confirm('Zerar todos os votos?')) return;
+  votes={}; updateUI();
 }
 const CF=['#FCD34D','#C084FC','#34D399','#FCA5A5','#60A5FA','#F472B6','#FB923C'];
 function confetti(){
-for(let i=0;i<55;i++){
-const el=document.createElement('div');el.className='cf';
-el.style.cssText=`left:${Math.random()*100}vw;background:${CF[~~(Math.random()*7)]};
-animation-duration:${1.2+Math.random()*2}s;animation-delay:${Math.random()*.55}s;
-width:${7+Math.random()*9}px;height:${9+Math.random()*13}px;
-border-radius:${Math.random()>.5?'50%':'2px'}`;
-document.body.appendChild(el);el.addEventListener('animationend',()=>el.remove());
-}
+  for(let i=0;i<55;i++){
+    const el=document.createElement('div'); el.className='cf';
+    el.style.cssText=`left:${Math.random()*100}vw;background:${CF[~~(Math.random()*7)]};
+      animation-duration:${1.2+Math.random()*2}s;animation-delay:${Math.random()*.6}s;
+      width:${7+Math.random()*9}px;height:${9+Math.random()*13}px;
+      border-radius:${Math.random()>.5?'50%':'2px'}`;
+    document.body.appendChild(el); el.addEventListener('animationend',()=>el.remove());
+  }
 }
 function toast(msg){
-const el=document.getElementById('toast');el.textContent=msg;
-el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2400);
+  const el=gid('toast'); el.textContent=msg;
+  el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),2600);
 }
+function gid(id){return document.getElementById(id);}
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-renderOpts();
+
+buildCards();
 loadVotes();
-setInterval(loadVotes,5000);
 </script>
 </body>
 </html>
