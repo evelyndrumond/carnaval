@@ -340,8 +340,10 @@ function vote(cid){
     toast('⚠️ Coloca seu nome primeiro!');return;
   }
   votes[name]=cid;
+  const combo=combos[cid];
+  const opcaoLabel='Opção '+String(cid+1).padStart(2,'0')+' - Dom: '+combo.dom.name+' / Seg: '+combo.seg.name;
   launchConfetti();toast(`🎉 ${name} votou!`);
-  fetch(WEBAPP_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name:name,cid:cid})}).catch(()=>{});
+  fetch(WEBAPP_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name:name,cid:cid,opcao:opcaoLabel})}).catch(()=>{});
   updateCards();updateLeaderboard();
 }
 
